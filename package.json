@@ -1,0 +1,14 @@
+{
+  "name": "picoteo-tia-luci",
+  "version": "1.0.0",
+  "description": "Web App Picoteo de la Tía Luci",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

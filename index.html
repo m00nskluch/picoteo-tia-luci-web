@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Picoteo de la Tía Luci – Cocina peruana auténtica en Santiago de Chile. Brasas, chifa y sabor de hogar. Pide en línea por WhatsApp." />
+  <meta name="keywords" content="comida peruana santiago, ceviche santiago, pollo a la brasa, chifa, tia luci, picoteo peruano" />
+  <meta property="og:title" content="Picoteo de la Tía Luci" />
+  <meta property="og:description" content="El sabor auténtico de Perú en el corazón de Santiago." />
+  <meta property="og:image" content="img/logo.png" />
+  <title>Picoteo de la Tía Luci – Sabor Peruano en Santiago</title>
+  <link rel="icon" type="image/png" href="img/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <header class="site-header" id="top">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a href="#top" class="nav-logo" aria-label="Ir al inicio">
+        <span class="logo-text">La Tía Luci</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#historia" class="nav-link">Historia</a></li>
+        <li><a href="#menu-section" class="nav-link">Menú</a></li>
+        <li><a href="#info-section" class="nav-link">Info</a></li>
+      </ul>
+      <button class="cart-toggle-btn" id="cartToggleBtn" aria-label="Abrir carrito de compras">
+        🛒 <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </nav>
+  </header>
+
+  
+  <section class="hero" id="inicio" aria-label="Inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">✦ Cocina Peruana Auténtica en Santiago ✦</p>
+      <h1 class="hero-title">Picoteo de<br/><em>la Tía Luci</em></h1>
+      <p class="hero-subtitle">
+        Un sueño familiar nacido del amor por las brasas y el chifa. La Tía Luci trajo desde Lima
+        las recetas de toda la vida: el secreto del ceviche, el fuego lento del pollo, la magia
+        de cada ají. Hoy, en el corazón de Santiago, esa memoria se convierte en tu plato.
+      </p>
+      <div class="hero-badges">
+        <span class="badge">🔥 Brasas al carbón</span>
+        <span class="badge">🐟 Ceviche fresco</span>
+        <span class="badge">🍜 Chifa tradicional</span>
+      </div>
+      <a href="#menu-section" class="hero-cta" id="heroCta">Ver el Menú</a>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">↓</div>
+  </section>
+
+  
+  <section class="history-section container" id="historia" aria-label="Nuestra Historia">
+    <div class="history-grid">
+      <div class="history-text">
+        <p class="section-eyebrow">— Tradición y Sabor —</p>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Nuestra Historia</h2>
+        <p>Esta historia está llena de sabor, gusto y pasión por la comida. Iniciamos nuestra aventura culinaria en el año 2014, en nuestro local en la comuna Independencia. Nuestra fundadora, Doña Luci Cruz Taco, tuvo la visión de hacer un restaurante para que puedan comer rico, siempre destacando la buena atención y el sentir de una gran familia.</p>
+        <p>En el Picoteo nos diferenciamos por nuestra esencia, el sabor inigualable del pollo y el formato sencillo y acogedor que hace que nuestros clientes se sientan como en casa. Creemos que el perfecto balance en nuestros ingredientes peruanos, hacen de nuestro aderezo el deleite en nuestros clientes, que nos permite estar presentes en todo momento de tu día, con horarios desde el almuerzo hasta muy entrada la noche.</p>
+      </div>
+      <div class="history-image">
+        <img src="img/logo.png" alt="Logo de Picoteo de la Tía Luci" />
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="menu-section" id="menu-section" aria-label="Menú de platos">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">— Lo mejor de Lima en tu mesa —</p>
+        <h2 class="section-title">Nuestra Carta</h2>
+      </div>
+
+      
+      <!-- Buscador -->
+      <div class="search-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" class="search-input" placeholder="Buscar platillo..." aria-label="Buscar platillo">
+      </div>
+
+      <div class="category-filters" id="categoryFilters" role="tablist" aria-label="Filtrar por categoría">
+        <button class="filter-btn active" data-category="todos" role="tab" aria-selected="true" id="filterTodos">
+          🍽️ Todos
+        </button>
+        
+      </div>
+
+      
+      <div class="menu-grid" id="menuGrid" role="list" aria-live="polite" aria-label="Listado de platos">
+        
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+        <div class="skeleton-card" aria-hidden="true"></div>
+      </div>
+
+      
+      <div class="menu-error hidden" id="menuError" role="alert">
+        <span class="error-icon">😔</span>
+        <p>No pudimos cargar el menú. <button id="retryBtn" class="retry-btn">Reintentar</button></p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="info-section" id="info-section" aria-label="Información y ubicación">
+    <div class="container info-grid">
+      
+      <article class="info-card" aria-label="Horarios de atención">
+        <div class="info-icon" aria-hidden="true">🕐</div>
+        <h3>Horarios</h3>
+        <ul class="hours-list" role="list">
+          <li><span>Lunes a Domingo</span><strong>12:00 a.m. a 10:40 p.m.</strong></li>
+        </ul>
+        <p class="info-note">Pedidos a domicilio hasta 30 min antes de cierre.</p>
+      </article>
+
+      
+      <article class="info-card" aria-label="Contacto y redes">
+        <div class="info-icon" aria-hidden="true">📱</div>
+        <h3>Contáctanos</h3>
+        <p>¿Dudas sobre tu pedido? Escríbenos directamente y te respondemos al tiro.</p>
+        <a href="https://wa.me/56986121222?text=Hola%20Tía%20Luci,%20tengo%20una%20consulta%20🙌" 
+           class="whatsapp-contact-btn" 
+           target="_blank" rel="noopener noreferrer"
+           id="contactWhatsappBtn"
+           aria-label="Contactar por WhatsApp">
+          💬 Escribir por WhatsApp
+        </a>
+      </article>
+
+      
+      <article class="info-card info-card--wide" aria-label="Ubicación en el mapa">
+        <div class="info-icon" aria-hidden="true">📍</div>
+        <h3>¿Dónde Estamos?</h3>
+        <p class="map-address">Echeverría 940, Santiago de Chile</p>
+        <div class="map-wrapper">
+          <iframe
+            title="Ubicación Picoteo de la Tía Luci"
+            src="https://maps.google.com/maps?q=Echeverr%C3%ADa%20940,%20Santiago%20de%20Chile&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="280"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="img/logo.png" alt="Logo Picoteo de la Tía Luci" class="footer-logo" />
+        <p class="footer-tagline">Sabor peruano con alma familiar.</p>
+        <div style="font-size: 0.85rem; color: var(--clr-text-muted); margin-top: var(--space-sm); line-height: 1.6;">
+          📍 Echeverría 940, Santiago de Chile<br>
+          🕐 Lunes a Domingo de 12:00 a.m. a 10:40 p.m.
+        </div>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces del pie de página">
+        <a href="#historia">Historia</a>
+        <a href="#menu-section">Menú</a>
+        <a href="#info-section">Horarios</a>
+      </nav>
+      <p class="footer-copy">© 2025 Picoteo de la Tía Luci · Hecho con ❤️ en Santiago</p>
+    </div>
+  </footer>
+
+  
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="cart-header">
+      <h2 class="cart-title">🛒 Tu Pedido</h2>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems" role="list" aria-label="Productos en el carrito">
+      
+    </div>
+    <div class="cart-empty" id="cartEmpty" aria-live="polite">
+      <span class="cart-empty-icon">🍽️</span>
+      <p>Tu carrito está vacío.<br/>¡Añade algo rico!</p>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">$0</strong>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn" aria-label="Finalizar pedido por WhatsApp">
+        <span>💬 Pedir por WhatsApp</span>
+      </button>
+      <button class="keep-shopping-btn" id="keepShoppingBtn" aria-label="Seguir Pidiendo">
+        Seguir Pidiendo
+      </button>
+      <button class="clear-cart-btn" id="clearCartBtn" aria-label="Vaciar carrito">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+
+  
+  <a href="https://wa.me/56986121222?text=Hola%20Tía%20Luci,%20tengo%20una%20consulta%20🙌"
+     class="whatsapp-fab"
+     id="whatsappFab"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+  </a>
+
+  
+  <!-- Modal de Detalles del Plato -->
+  <div class="item-modal-overlay" id="itemModalOverlay" aria-hidden="true">
+    <div class="item-modal" id="itemModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Cerrar modal">✕</button>
+      <div class="modal-content-wrap">
+        <div class="modal-image-col">
+          <img id="modalImage" src="" alt="Plato" />
+        </div>
+        <div class="modal-info-col">
+          <span class="modal-category" id="modalCategory"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-variant" id="modalVariant"></p>
+          <p class="modal-desc" id="modalDesc"></p>
+          <div class="modal-footer">
+            <span class="modal-price" id="modalPrice"></span>
+            <button class="add-to-cart-btn" id="modalAddBtn">＋ Añadir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

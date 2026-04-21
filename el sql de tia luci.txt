@@ -1,0 +1,132 @@
+-- 1. Limpieza de estructura
+DROP TABLE IF EXISTS menu_items;
+
+-- 2. Creación de tabla optimizada para SQLite
+CREATE TABLE menu_items (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    categoria TEXT NOT NULL,
+    platillo TEXT NOT NULL,
+    descripcion TEXT,
+    variante TEXT,
+    precio INTEGER,
+    imagen TEXT DEFAULT 'logo.png'
+);
+
+-- 3. Inserción de Datos (74 registros únicos)
+INSERT INTO menu_items (categoria, platillo, descripcion, variante, precio) VALUES
+('Pollos, brasas & Broster', 'Jaranón Familiar', '1 pollo a la brasa + papas fritas + ensalada + gaseosa de 1.5L + arroz chaufa', NULL, 27990),
+('Pollos, brasas & Broster', 'Ronda de Alitas', 'Alitas glaseadas en tres salsas: BBQ, maracuyá y acevichada. Con papas o chaufa', NULL, 18990),
+('Pollos, brasas & Broster', 'Banquete familiar', 'Ensalada mixta, papas, arroz chaufa de hot dog, caldo de gallina y bebida familiar', NULL, 31990),
+('Pollos, brasas & Broster', 'Cuarto de pollo', 'Acompañado de papas fritas y ensalada fresca', NULL, 7000),
+('Pollos, brasas & Broster', 'Medio pollo', 'Acompañado de papas fritas y ensalada fresca', NULL, 13500),
+('Pollos, brasas & Broster', 'Pollo Broaster', 'Pollo crujiente con papas fritas y ensalada', NULL, 8000),
+('Pollos, brasas & Broster', 'Mostrito Brasa Clásica', 'Cuarto de pollo a la brasa + arroz chaufa + papas + ensalada', 'Clásica', 7990),
+('Pollos, brasas & Broster', 'Mostrito Brasa Broster', 'Cuarto de pollo a la brasa + arroz chaufa + papas + ensalada', 'Broster', 8500),
+('Pollos, brasas & Broster', 'Alitas acevichadas o BBQ', 'Alitas de pollo marinadas en salsa acevichada o BBQ', NULL, 9990),
+('Pollos, brasas & Broster', 'Salchi brasa Clásica', 'Hot dog, cuarto de pollo a la brasa, ensalada y papas', 'Clásica', 8500),
+('Pollos, brasas & Broster', 'Salchi brasa Broster', 'Hot dog, cuarto de pollo a la brasa, ensalada y papas', 'Broster', 9500),
+('Pollos, brasas & Broster', 'Brasa a lo pobre', 'Cuarto de pollo, papas, ensalada, huevo frito y plátano frito', NULL, 8990),
+('Pollos, brasas & Broster', 'Salchipapas Clásica', 'Papas fritas, hot dog, ensalada y cremas', 'Clásica', 6990),
+('Pollos, brasas & Broster', 'Salchipapas Mixta', 'Papas fritas, hot dog, chorizo, ensalada y cremas', 'Mixta', 7990),
+('Pollos, brasas & Broster', 'Chicharron de pollo', 'Filetitos de pollo apanados con papas, arroz y ensalada', NULL, 8990),
+('Pollos, brasas & Broster', 'Milanesa de pollo', 'Filete de pollo apanado con papas fritas, ensalada y arroz', NULL, 8990),
+('Parrilladas', 'Parrillada Familiar', '2 chuletas, 1 lomo liso, 2 palos anticucho, rachi, 1/4 pollo, 3 chorizos, papas', NULL, 39990),
+('Parrilladas', 'Parrilla para dos', '1 chuleta/pechuga, 1 lomo vetado, 2 chorizos, 2 palos anticucho, rachi', NULL, 27990),
+('Parrilladas', 'Pollo a la parrilla Clásica', 'Cuarto de pollo a la parrilla con papas cocidas y ensalada', 'Clásica', 7990),
+('Parrilladas', 'Pollo a la parrilla Pechuga', 'Cuarto de pollo a la parrilla con papas cocidas y ensalada', 'Pechuga', 7900),
+('Parrilladas', 'Brochetas mixtas', 'Pollo, vacuno y camarón con papas doradas y ensalada criolla', NULL, 10500),
+('Parrilladas', 'Anticuchos de corazón Clásica', 'Dos palitos de anticucho de res, papas cocidas y choclo', 'Clásica', 8500),
+('Parrilladas', 'Anticuchos de corazón c/Rachi', 'Dos palitos de anticucho de res, papas cocidas y choclo', 'c/Rachi', 9900),
+('Parrilladas', 'Pulpo a la parrilla con verduras', 'Pulpo tierno a la parrilla con verduras frescas', NULL, 10990),
+('Parrilladas', 'Anticuchos con brasa', 'Cuarto de pollo a la brasa, 1 palito de anticucho, ensalada y papas', NULL, 9500),
+('Parrilladas', 'Filete parrillero con fetuchini a la huancaína', 'Filete a la parrilla sobre pasta en salsa huancaína', NULL, 11990),
+('Parrilladas', 'Salmón a la parrilla', 'Filete de salmón asado con arroz, papas fritas y ensalada', NULL, 10500),
+('Parrilladas', 'Lomo liso parrillero', 'Acompañado de papas fritas, arroz blanco y ensalada', NULL, 9990),
+('Parrilladas', 'Chuleta parrillera', 'Acompañado de papas, ensalada y arroz blanco', NULL, 7990),
+('Chifa fusión', 'Arroz Chaufa', 'Arroz salteado con soya, cebollines y huevo', 'Pollo/Carne', 8500),
+('Chifa fusión', 'Arroz chaufa a lo salvaje', 'Salteado con brócoli y pimentón rojo', NULL, 9500),
+('Chifa fusión', 'Chaufa con tortillas', 'Chaufa coronado con tortilla de verduras y proteína', NULL, 12990),
+('Chifa fusión', 'Aeropuerto', 'Combinación de arroz chaufa, tallarines y diente de dragón', NULL, 8990),
+('Chifa fusión', 'Tallarín Saltado Chifa', 'Pasta salteada con verduras mixtas en salsa oriental', NULL, 8990),
+('Chifa fusión', 'Combinado Chifa', 'Tallarines con pollo, col china y pimentón con arroz chaufa', NULL, 9990),
+('Chifa fusión', 'Saltado de verduras', 'Mix de verduras al wok con pollo y arroz', NULL, 9900),
+('Chifa fusión', 'Kam lu wantan', 'Wantanes fritos con carnes, frutas y salsa tamarindo', NULL, 13990),
+('Chifa fusión', 'Pollo con piña', 'Trozos de pollo en salsa de piña con arroz chaufa', NULL, 12990),
+('Chifa fusión', 'Pollo Tipakay', 'Pollo apanado en salsa agridulce de tamarindo con chaufa', NULL, 10990),
+('Chifa fusión', 'Pollo con durazno', 'Pollo apanado en salsa de durazno con arroz chaufa', NULL, 12990),
+('Chifa fusión', 'Pollo Chijaukai', 'Pollo apanado en salsa de ostras con arroz chaufa', NULL, 10990),
+('Chifa fusión', 'Pollo enrollado en salsa de ostion', 'Filete de pollo enrollado en salsa de ostión con chaufa', NULL, 11990),
+('Chifa fusión', 'Sopa wantan', 'Carne de res, verduras mixtas y fideos wantan', NULL, 8990),
+('Chifa fusión', 'Wantan frito (7 unidades)', 'Wantán relleno con salsa de tamarindo', NULL, 6000),
+('Los Criollazos', 'Trilogía criolla', 'Lomo saltado, Ají de gallina y arroz Chaufa', NULL, 26990),
+('Los Criollazos', 'Tallarín Criollo Pollo', 'Tallarines al wok con tomate y cebolla morada', 'Pollo', 9500),
+('Los Criollazos', 'Tallarín Criollo Vacuno', 'Tallarines al wok con tomate y cebolla morada', 'Vacuno', 10800),
+('Los Criollazos', 'Tallarines verdes Milanesa', 'Pasta al pesto con milanesa y papa a la huancaína', 'Milanesa', 9990),
+('Los Criollazos', 'Tallarines verdes Bistec', 'Pasta al pesto con bistec y papa a la huancaína', 'Bistec', 11800),
+('Los Criollazos', 'Fetuccini a la huancaína con lomo saltado', 'Pasta en crema de huancaína con lomo saltado tradicional', NULL, 12900),
+('Los Criollazos', 'Tacu Tacu', 'Arroz y porotos dorados con lomo saltado o mariscos', NULL, 12990),
+('Los Criollazos', 'Sopa Criolla', 'Fideos cabello de ángel, carne, leche y huevo frito', NULL, 9990),
+('Los Criollazos', 'Bisteck a lo pobre', 'Filete a la parrilla, papas, plátano, huevo y arroz', NULL, 11950),
+('Los Criollazos', 'Filete mar y tierra', 'Filete de vacuno en salsa de mariscos con arroz', NULL, 13990),
+('Los Criollazos', 'Lomo saltado Pollo', 'Carne salteada al wok con cebolla, tomate, papas y arroz', 'Pollo', 8500),
+('Los Criollazos', 'Lomo saltado Vacuno', 'Carne salteada al wok con cebolla, tomate, papas y arroz', 'Vacuno', 9990),
+('Los Criollazos', 'Ají de gallina', 'Pechuga desmenuzada en crema de ají amarillo con arroz', NULL, 10400),
+('Los Criollazos', 'Pechuga en salsa de champiñones', 'Filete de pollo con crema de setas, arroz y papas', NULL, 10900),
+('Pescados & Mariscos', 'Especial tía Luci', 'Selección premium de pescados y mariscos de la casa', NULL, 24990),
+('Pescados & Mariscos', 'Trio Marino', 'Ceviche, arroz con mariscos y chicharrón de calamar', NULL, 26990),
+('Pescados & Mariscos', 'Ronda Marina', 'Ceviche, causa, pulpo y mariscos seleccionados', NULL, 28990),
+('Pescados & Mariscos', 'Ceviche de pulpo con camarones', 'Pulpo y camarones marinados en limón de pica y ají', NULL, 13990),
+('Pescados & Mariscos', 'Ceviche de la tía Lucy', 'Nuestra receta secreta de ceviche de pescado fresco', NULL, 14990),
+('Pescados & Mariscos', 'Ceviche de salmón', 'Salmón fresco marinado al estilo peruano', NULL, 12990),
+('Pescados & Mariscos', 'Ceviche de pescado', 'Cubos de pescado, limón, cebolla, camote y choclo', NULL, 9990),
+('Pescados & Mariscos', 'Ceviche mixto', 'Pescado, camarón, calamar y pulpo al limón', NULL, 12990),
+('Pescados & Mariscos', 'Ceviche carretillero', 'Ceviche de pescado con chicharrón de calamar crujiente', NULL, 14990),
+('Pescados & Mariscos', 'Leche de tigre', 'Zumo de ceviche concentrado con trozos de pescado', NULL, 7990),
+('Pescados & Mariscos', 'Combinoche', 'Ceviche, tallarines rojos y papa a la huancaína', NULL, 8990),
+('Pescados & Mariscos', 'Tallarines a lo macho', 'Pasta con mix de mariscos en salsa de la casa', NULL, 9990),
+('Pescados & Mariscos', 'Arroz con mariscos', 'Arroz salteado con mariscos y toque de parmesano', NULL, 9990),
+('Pescados & Mariscos', 'Jalea Pez', 'Pescado frito con yucas y ensalada criolla', 'Pez', 10990),
+('Pescados & Mariscos', 'Jalea Mixta', 'Mariscos apanados con yucas y ensalada criolla', 'Mixta', 11990),
+('Pescados & Mariscos', 'Pescado a lo macho', 'Filete a la plancha bañado en salsa de mariscos', NULL, 11990),
+('Pescados & Mariscos', 'Pescado frito en salsa de ajo', 'Filete con salsa de ajo, arroz y papas fritas', NULL, 11500),
+('Pescados & Mariscos', 'Pescado el salsa de champiñones', 'Filete en salsa bechamel con setas y arroz', NULL, 11900),
+('Pescados & Mariscos', 'Pescado a la plancha o grill', 'Sazonado con especias, arroz, ensalada y yucas', NULL, 8990),
+('Pescados & Mariscos', 'Pescado frito entero', 'Pescado entero crujiente con yuca y ensalada', NULL, 14990),
+('Pescados & Mariscos', 'Pescado a la chorrillana', 'Bañado en salteado de cebolla y tomate con arroz', NULL, 11990),
+('Pescados & Mariscos', 'Camarones en salsa maracuya', 'Camarones apanados con reducción de maracuyá', NULL, 10990),
+('Pescados & Mariscos', 'Chupe de camarones', 'Sopa tradicional con leche, huevo, queso y camarones', NULL, 10990),
+('Pescados & Mariscos', 'Sudado de pescado', 'Filete al vapor con cebolla, tomate y caldo corto', NULL, 11990),
+('Pescados & Mariscos', 'Parihuela', 'Sopa potente de mariscos y pescado al ají', NULL, 13990),
+('Jugos & Postres', 'Pisco Sour Regular', 'Receta clásica de la casa', 'Regular', 4900),
+('Jugos & Postres', 'Pisco Sour Frutado', 'Con frutas de la estación', 'Frutado', 5900),
+('Jugos & Postres', 'Jugos naturales Vaso', 'Fruta natural de temporada', 'Vaso', 2500),
+('Jugos & Postres', 'Jugos naturales Jarra', 'Jarra de 1.5 litros para compartir', 'Jarra', 6000),
+('Jugos & Postres', 'Gaseosas', 'Coca Cola, Sprite, Fanta', NULL, 3500),
+('Jugos & Postres', 'Cervezas', 'Cuzqueña, Pilsen, Sol, Miller', NULL, 4500),
+('Jugos & Postres', 'Gaseosas Peruanas', 'Inca Kola 1.5L, Guaraná 2L', NULL, 5000),
+('Jugos & Postres', 'Postres', 'Crema volteada, suspiro limeño, tres leches', NULL, 3000),
+('Jugos & Postres', 'Agregados', 'Ensalada, papas, arroz o huancaína', NULL, 2500);
+
+-- 4. Vinculación de Imágenes
+UPDATE menu_items SET imagen = 'aeropuerto.jpeg' WHERE platillo = 'Aeropuerto';
+UPDATE menu_items SET imagen = 'alitas.acevichadas.jpeg' WHERE platillo = 'Alitas acevichadas o BBQ';
+UPDATE menu_items SET imagen = 'anti.cora.jpeg' WHERE platillo LIKE 'Anticuchos de corazón%';
+UPDATE menu_items SET imagen = 'brasa.pobre.jpeg' WHERE platillo = 'Brasa a lo pobre';
+UPDATE menu_items SET imagen = 'ceviche.carretillero.jpeg' WHERE platillo = 'Ceviche carretillero';
+UPDATE menu_items SET imagen = 'ceviche.mix.jpeg' WHERE platillo = 'Ceviche mixto';
+UPDATE menu_items SET imagen = 'chaufa.jpeg' WHERE platillo = 'Arroz Chaufa';
+UPDATE menu_items SET imagen = 'chicharron.pollo.jpeg' WHERE platillo = 'Chicharron de pollo';
+UPDATE menu_items SET imagen = 'combinoche.jpeg' WHERE platillo = 'Combinoche';
+UPDATE menu_items SET imagen = 'fetu.huan.lomo.jpeg' WHERE platillo = 'Fetuccini a la huancaína con lomo saltado';
+UPDATE menu_items SET imagen = 'jalea.jpeg' WHERE platillo LIKE 'Jalea%';
+UPDATE menu_items SET imagen = 'leche.tigre.jpeg' WHERE platillo = 'Leche de tigre';
+UPDATE menu_items SET imagen = 'milanes.de.pollo.jpeg' WHERE platillo = 'Milanesa de pollo';
+UPDATE menu_items SET imagen = 'mostrito.brasa.jpeg' WHERE platillo LIKE 'Mostrito Brasa%';
+UPDATE menu_items SET imagen = 'parihuela.jpeg' WHERE platillo = 'Parihuela';
+UPDATE menu_items SET imagen = 'pes.macho.jpeg' WHERE platillo = 'Pescado a lo macho';
+UPDATE menu_items SET imagen = 'pescado.grill.jpeg' WHERE platillo LIKE 'Pescado a la plancha%';
+UPDATE menu_items SET imagen = 'ronda.alitas.jpeg' WHERE platillo = 'Ronda de Alitas';
+UPDATE menu_items SET imagen = 'sopa.criolla.jpeg' WHERE platillo = 'Sopa Criolla';
+UPDATE menu_items SET imagen = 'sopa.wantan.jpeg' WHERE platillo = 'Sopa wantan';
+UPDATE menu_items SET imagen = 'tacutacu.jpeg' WHERE platillo = 'Tacu Tacu';
+UPDATE menu_items SET imagen = 'tallarin.criollo.jpeg' WHERE platillo LIKE 'Tallarín Criollo%';

@@ -5,6 +5,8 @@
   --clr-terra:       #C8152A;
   --clr-terra-dark:  #9E0F1C;
   --clr-terra-light: #E03040;
+  --clr-coral:       #F47C6A;
+  --clr-coral-dark:  #D96452;
   --clr-gold:        #C8152A;
   --clr-gold-light:  #E03040;
   --clr-cream:       #1A1A1A;
@@ -125,7 +127,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .nav-link {
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--clr-text-muted);
+  color: #444444;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   transition: color var(--t-fast);
@@ -141,7 +143,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: right var(--t-med);
 }
 
-.nav-link:hover { color: var(--clr-cream); }
+.nav-link:hover { color: var(--clr-terra); }
 .nav-link:hover::after { right: 0; }
 
 .cart-toggle-btn {
@@ -187,8 +189,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   text-align: center;
   padding: 100px var(--space-lg) var(--space-2xl);
   background:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,85,42,0.18) 0%, transparent 70%),
-    linear-gradient(160deg, #261408 0%, #1A0F0A 50%, #100808 100%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(200,21,42,0.06) 0%, transparent 70%),
+    linear-gradient(160deg, #FFFFFF 0%, #FFF5F5 50%, #FFFFFF 100%);
   overflow: hidden;
 }
 
@@ -205,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 200px;
-  background: linear-gradient(to bottom, transparent, var(--clr-bg));
+  background: linear-gradient(to bottom, transparent, #FFFFFF);
   pointer-events: none;
 }
 
@@ -219,7 +221,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--clr-gold);
+  color: var(--clr-terra);
   margin-bottom: var(--space-lg);
   font-weight: 500;
 }
@@ -229,7 +231,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: clamp(3rem, 9vw, 6.5rem);
   font-weight: 900;
   line-height: 1.05;
-  color: var(--clr-cream);
+  color: #1A1A1A;
   margin-bottom: var(--space-lg);
 }
 
@@ -241,7 +243,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .hero-subtitle {
   font-size: 1.05rem;
-  color: var(--clr-text-muted);
+  color: #555555;
   line-height: 1.7;
   margin-bottom: var(--space-xl);
   max-width: 560px;
@@ -261,9 +263,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-weight: 500;
   padding: 0.4rem 0.9rem;
   border-radius: var(--r-full);
-  border: 1px solid var(--clr-border);
-  color: var(--clr-gold-light);
-  background: rgba(212,151,42,0.08);
+  border: 1px solid rgba(200,21,42,0.2);
+  color: var(--clr-terra);
+  background: rgba(200,21,42,0.05);
   letter-spacing: 0.03em;
 }
 
@@ -305,7 +307,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--clr-gold);
+  color: var(--clr-terra);
   margin-bottom: var(--space-sm);
 }
 
@@ -313,19 +315,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  color: var(--clr-cream);
+  color: #1A1A1A;
 }
 
 
 .menu-section {
   padding: var(--space-2xl) 0;
-  background: var(--clr-bg);
+  background: #F9F9F9;
 }
 
 
 .history-section {
   padding: var(--space-xl) 0;
-  background: var(--clr-bg);
+  background: #FFFFFF;
 }
 
 .history-grid {
@@ -336,7 +338,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .history-text p {
-  color: var(--clr-text-muted);
+  color: #555555;
   margin-bottom: var(--space-md);
   line-height: 1.8;
   font-size: 1.05rem;
@@ -365,23 +367,23 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-radius: var(--r-full);
   font-size: 0.85rem;
   font-weight: 500;
-  border: 1.5px solid var(--clr-border);
-  color: var(--clr-text-muted);
-  background: transparent;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  color: #555555;
+  background: #FFFFFF;
   transition: all var(--t-fast);
   letter-spacing: 0.02em;
 }
 
 .filter-btn:hover {
-  border-color: var(--clr-terra-light);
-  color: var(--clr-cream);
+  border-color: var(--clr-terra);
+  color: var(--clr-terra);
 }
 
 .filter-btn.active {
-  background: linear-gradient(135deg, var(--clr-terra), var(--clr-terra-dark));
+  background: var(--clr-coral);
   border-color: transparent;
   color: white;
-  box-shadow: 0 2px 12px rgba(200,85,42,0.4);
+  box-shadow: 0 2px 10px rgba(244,124,106,0.35);
 }
 
 
@@ -407,8 +409,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 .menu-card {
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--r-lg);
   overflow: hidden;
   display: flex;
@@ -416,12 +418,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: transform var(--t-med), box-shadow var(--t-med), border-color var(--t-med);
   position: relative;
   cursor: pointer;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
 
 .menu-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-card), 0 0 0 1px rgba(200,85,42,0.25);
-  border-color: rgba(200,85,42,0.35);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12), 0 0 0 1px rgba(200,21,42,0.15);
+  border-color: rgba(200,21,42,0.2);
 }
 
 .card-image-wrap {
@@ -429,7 +432,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%;
   padding-top: 75%;
   overflow: hidden;
-  background: var(--clr-bg-2);
+  background: #F0F0F0;
 }
 
 .card-image-wrap img {
@@ -447,16 +450,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: absolute;
   top: var(--space-sm);
   left: var(--space-sm);
-  background: rgba(26,15,10,0.8);
+  background: rgba(255,255,255,0.9);
   backdrop-filter: blur(8px);
-  color: var(--clr-gold-light);
+  color: var(--clr-terra);
   font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
   border-radius: var(--r-full);
-  border: 1px solid rgba(212,151,42,0.3);
+  border: 1px solid rgba(200,21,42,0.2);
 }
 
 .card-body {
@@ -471,13 +474,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--clr-cream);
+  color: #1A1A1A;
   line-height: 1.2;
 }
 
 .card-description {
   font-size: 0.75rem;
-  color: var(--clr-text-muted);
+  color: #777777;
   line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -488,7 +491,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .card-variant {
   font-size: 0.7rem;
-  color: var(--clr-gold);
+  color: var(--clr-terra);
   font-weight: 500;
   font-style: italic;
 }
@@ -498,7 +501,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: space-between;
   padding: var(--space-sm);
-  border-top: 1px solid var(--clr-border);
+  border-top: 1px solid rgba(0,0,0,0.07);
   margin-top: auto;
   gap: 0.25rem;
   flex-wrap: wrap;
@@ -515,7 +518,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  background: linear-gradient(135deg, var(--clr-terra), var(--clr-terra-dark));
+  background: var(--clr-coral);
   color: white;
   padding: 0.4rem 0.65rem;
   border-radius: var(--r-full);
@@ -526,7 +529,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .add-to-cart-btn:hover {
   transform: scale(1.06);
-  box-shadow: 0 4px 16px rgba(200,85,42,0.45);
+  background: var(--clr-coral-dark);
+  box-shadow: 0 4px 16px rgba(244,124,106,0.45);
 }
 
 .add-to-cart-btn:active { transform: scale(0.97); }
@@ -545,8 +549,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 .skeleton-card {
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: #F0F0F0;
+  border: 1px solid rgba(0,0,0,0.06);
   border-radius: var(--r-lg);
   height: 360px;
   position: relative;
@@ -557,7 +561,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.04) 50%, transparent 70%);
+  background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.6) 50%, transparent 70%);
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
@@ -571,7 +575,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .menu-error {
   text-align: center;
   padding: var(--space-2xl);
-  color: var(--clr-text-muted);
+  color: #777777;
 }
 
 .error-icon { font-size: 3rem; display: block; margin-bottom: var(--space-md); }
@@ -585,10 +589,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 .info-section {
-  background: var(--clr-bg-2);
+  background: #F9F9F9;
   padding: var(--space-2xl) 0;
-  border-top: 1px solid var(--clr-border);
-  border-bottom: 1px solid var(--clr-border);
+  border-top: 1px solid rgba(0,0,0,0.07);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
 }
 
 .info-grid {
@@ -598,14 +602,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .info-card {
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--r-lg);
   padding: var(--space-xl);
-  transition: border-color var(--t-med);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: border-color var(--t-med), box-shadow var(--t-med);
 }
 
-.info-card:hover { border-color: rgba(200,85,42,0.4); }
+.info-card:hover { border-color: rgba(200,21,42,0.3); box-shadow: 0 4px 20px rgba(200,21,42,0.08); }
 
 .info-icon {
   font-size: 2.2rem;
@@ -617,13 +622,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--clr-cream);
+  color: #1A1A1A;
   margin-bottom: var(--space-sm);
 }
 
 .info-card p {
   font-size: 0.9rem;
-  color: var(--clr-text-muted);
+  color: #666666;
   line-height: 1.6;
   margin-bottom: var(--space-md);
 }
@@ -642,17 +647,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.9rem;
   padding: 0.5rem var(--space-sm);
   border-radius: var(--r-sm);
-  background: rgba(212,151,42,0.07);
-  border: 1px solid rgba(212,151,42,0.12);
+  background: rgba(200,21,42,0.04);
+  border: 1px solid rgba(200,21,42,0.1);
 }
 
-.hours-list li span { color: var(--clr-text-muted); }
-.hours-list li strong { color: var(--clr-gold-light); }
+.hours-list li span { color: #666666; }
+.hours-list li strong { color: var(--clr-terra); }
 
 .info-note {
   font-size: 0.78rem !important;
   font-style: italic;
-  color: rgba(196,168,122,0.7) !important;
+  color: #999999 !important;
   margin-top: var(--space-sm) !important;
 }
 
@@ -688,9 +693,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 .site-footer {
-  background: #120B06;
+  background: #FFFFFF;
   padding: var(--space-xl) 0 var(--space-lg);
-  border-top: 1px solid var(--clr-border);
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
 
 .footer-content {
@@ -714,7 +719,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-tagline {
   font-family: var(--ff-display);
   font-style: italic;
-  color: var(--clr-text-muted);
+  color: #666666;
   font-size: 0.9rem;
 }
 
@@ -727,17 +732,17 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .footer-nav a {
   font-size: 0.82rem;
-  color: var(--clr-text-muted);
+  color: #666666;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   transition: color var(--t-fast);
 }
 
-.footer-nav a:hover { color: var(--clr-terra-light); }
+.footer-nav a:hover { color: var(--clr-terra); }
 
 .footer-copy {
   font-size: 0.78rem;
-  color: rgba(196,168,122,0.5);
+  color: #AAAAAA;
 }
 
 
@@ -746,14 +751,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   top: 0; right: 0;
   height: 100%;
   width: min(100vw, 420px);
-  background: #1E1008;
-  border-left: 1px solid var(--clr-border);
+  background: #FFFFFF;
+  border-left: 1px solid rgba(0,0,0,0.1);
   z-index: 300;
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
   transition: transform var(--t-med);
-  box-shadow: -8px 0 40px rgba(0,0,0,0.6);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.12);
 }
 
 .cart-sidebar.open {
@@ -789,7 +794,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--clr-cream);
+  color: #1A1A1A;
 }
 
 .cart-close-btn {
@@ -817,8 +822,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   grid-template-columns: 1fr auto;
   gap: var(--space-sm) var(--space-md);
   padding: var(--space-sm) var(--space-md);
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: #F9F9F9;
+  border: 1px solid rgba(0,0,0,0.07);
   border-radius: var(--r-md);
   animation: slideIn 0.25s ease;
 }
@@ -832,14 +837,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--clr-cream);
+  color: #1A1A1A;
   grid-column: 1 / -1;
   line-height: 1.3;
 }
 
 .cart-item-variant {
   font-size: 0.75rem;
-  color: var(--clr-gold);
+  color: var(--clr-terra);
   font-style: italic;
   grid-column: 1 / -1;
   margin-top: -0.25rem;
@@ -869,7 +874,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-size: 0.95rem;
   min-width: 24px;
   text-align: center;
-  color: var(--clr-cream);
+  color: #1A1A1A;
 }
 
 .cart-item-price {
@@ -886,7 +891,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   align-items: center;
   justify-content: center;
   gap: var(--space-md);
-  color: var(--clr-text-muted);
+  color: #888888;
   text-align: center;
   padding: var(--space-xl);
 }
@@ -907,14 +912,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: space-between;
   align-items: center;
   font-size: 1.05rem;
-  color: var(--clr-text-muted);
+  color: #666666;
   margin-bottom: var(--space-sm);
 }
 
 .cart-total strong {
   font-family: var(--ff-display);
   font-size: 1.5rem;
-  color: var(--clr-cream);
+  color: #1A1A1A;
 }
 
 .checkout-btn {
@@ -1002,14 +1007,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   bottom: 5.5rem;
   left: 50%;
   transform: translateX(-50%) translateY(20px);
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
-  color: var(--clr-cream);
+  background: #1A1A1A;
+  border: 1px solid rgba(0,0,0,0.1);
+  color: #FFFFFF;
   padding: 0.65rem 1.4rem;
   border-radius: var(--r-full);
   font-size: 0.88rem;
   font-weight: 500;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s, transform 0.3s;
@@ -1068,9 +1073,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%;
   padding: 0.8rem 1.2rem 0.8rem 2.8rem;
   border-radius: var(--r-full);
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
-  color: var(--clr-cream);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  color: #1A1A1A;
   font-family: var(--ff-body);
   font-size: 0.95rem;
   transition: border-color var(--t-fast), box-shadow var(--t-fast);
@@ -1083,8 +1088,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .search-input::placeholder {
-  color: var(--clr-text-muted);
-  opacity: 0.7;
+  color: #AAAAAA;
+  opacity: 1;
 }
 
 .search-icon {
@@ -1120,15 +1125,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .item-modal {
-  background: var(--clr-bg-card);
-  border: 1px solid var(--clr-border);
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.08);
   border-radius: var(--r-lg);
   width: 100%;
   max-width: 800px;
   max-height: 90vh;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-card), 0 0 40px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
   transform: scale(0.95) translateY(10px);
   transition: transform var(--t-med);
 }
@@ -1144,8 +1149,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(0,0,0,0.5);
-  color: var(--clr-cream);
+  background: rgba(0,0,0,0.08);
+  color: #444444;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1165,13 +1170,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   overflow-y: auto;
   max-height: 90vh;
   scrollbar-width: thin;
-  scrollbar-color: var(--clr-terra) var(--clr-bg-card);
+  scrollbar-color: var(--clr-terra) #F0F0F0;
 }
 .modal-content-wrap::-webkit-scrollbar {
   width: 6px;
 }
 .modal-content-wrap::-webkit-scrollbar-track {
-  background: var(--clr-bg-card);
+  background: #F0F0F0;
 }
 .modal-content-wrap::-webkit-scrollbar-thumb {
   background: var(--clr-terra);
@@ -1188,7 +1193,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   width: 100%;
   height: 250px;
   flex-shrink: 0;
-  background: var(--clr-bg-2);
+  background: #F0F0F0;
 }
 
 @media (min-width: 768px) {
@@ -1214,7 +1219,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .modal-category {
   display: inline-block;
-  color: var(--clr-gold-light);
+  color: var(--clr-terra);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
@@ -1226,21 +1231,21 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--clr-cream);
+  color: #1A1A1A;
   line-height: 1.2;
   margin-bottom: var(--space-xs);
 }
 
 .modal-variant {
   font-size: 0.9rem;
-  color: var(--clr-gold);
+  color: var(--clr-terra);
   font-style: italic;
   margin-bottom: var(--space-md);
 }
 
 .modal-desc {
   font-size: 0.95rem;
-  color: var(--clr-text-muted);
+  color: #666666;
   line-height: 1.6;
   margin-bottom: var(--space-xl);
   flex: 1;
@@ -1252,7 +1257,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: space-between;
   margin-top: auto;
   padding-top: var(--space-md);
-  border-top: 1px solid var(--clr-border);
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
 
 .modal-price {

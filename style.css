@@ -2,19 +2,19 @@
 
 :root {
   
-  --clr-terra:       #C8552A;  
-  --clr-terra-dark:  #9E3D18;
-  --clr-terra-light: #E87548;
-  --clr-gold:        #D4972A;
-  --clr-gold-light:  #F5C75A;
-  --clr-cream:       #FAF3E0;
-  --clr-cream-dark:  #F0E5C8;
-  --clr-bg:          #1A0F0A;  
-  --clr-bg-2:        #261408;
-  --clr-bg-card:     #2E1A0E;
-  --clr-text:        #FAF3E0;
-  --clr-text-muted:  #C4A87A;
-  --clr-border:      rgba(212,151,42,0.2);
+  --clr-terra:       #C8152A;
+  --clr-terra-dark:  #9E0F1C;
+  --clr-terra-light: #E03040;
+  --clr-gold:        #C8152A;
+  --clr-gold-light:  #E03040;
+  --clr-cream:       #1A1A1A;
+  --clr-cream-dark:  #333333;
+  --clr-bg:          #FFFFFF;
+  --clr-bg-2:        #F5F5F5;
+  --clr-bg-card:     #FFFFFF;
+  --clr-text:        #1A1A1A;
+  --clr-text-muted:  #666666;
+  --clr-border:      rgba(0,0,0,0.1);
 
   
   --ff-display:  'Playfair Display', Georgia, serif;
@@ -35,8 +35,8 @@
   --r-full: 9999px;
 
   
-  --shadow-card: 0 4px 24px rgba(0,0,0,0.45);
-  --shadow-glow: 0 0 20px rgba(200,85,42,0.35);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 20px rgba(200,21,42,0.15);
 
   
   --t-fast: 0.18s ease;
@@ -47,8 +47,8 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--ff-body);
-  background-color: var(--clr-bg);
-  color: var(--clr-text);
+  background-color: #FFFFFF;
+  color: #1A1A1A;
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -69,7 +69,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--clr-bg-2); }
+::-webkit-scrollbar-track { background: #F5F5F5; }
 ::-webkit-scrollbar-thumb { background: var(--clr-terra); border-radius: var(--r-full); }
 
 
@@ -77,10 +77,11 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(26,15,10,0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--clr-border);
+  background: #FFFFFF;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   transition: background var(--t-med);
 }
 
@@ -113,7 +114,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   font-family: var(--ff-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--clr-cream);
+  color: var(--clr-terra);
 }
 
 .nav-links {
